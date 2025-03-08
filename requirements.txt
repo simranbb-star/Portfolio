@@ -6,5 +6,5 @@ Jinja2==3.1.2
 
 gunicorn
 
-Werkzeug==2.1.0
+Werkzeug==2.2.0
 
