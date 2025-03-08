@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block title %}Edit Skill - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="edit-section">
+    <h2>Edit Skill</h2>
+    <form method="POST">
+        <input type="text" name="name" value="{{ skill[1] }}" placeholder="Skill Name" required>
+        <select name="level" required>
+            <option value="Beginner" {% if skill[2] == 'Beginner' %}selected{% endif %}>Beginner</option>
+            <option value="Intermediate" {% if skill[2] == 'Intermediate' %}selected{% endif %}>Intermediate</option>
+            <option value="Good" {% if skill[2] == 'Good' %}selected{% endif %}>Good</option>
+            <option value="Expert" {% if skill[2] == 'Expert' %}selected{% endif %}>Expert</option>
+        </select>
+        <button type="submit">Update Skill</button>
+    </form>
+</section>
+{% endblock %}

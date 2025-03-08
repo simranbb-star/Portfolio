@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block title %}About Me - My Portfolio{% endblock %}
+
+{% block content %}
+<section class="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p class="intro">Hi, I'm <span class="highlight">Simran Bhandari</span>, a passionate <strong>Web Developer</strong> and <strong>Freelancer</strong> with over <strong>two years of experience</strong> crafting dynamic and responsive websites.</p>
+                
+                <p>I am currently pursuing a <strong>Bachelor of Science in Computer Science and Information Technology (B.Sc. CSIT)</strong> and am in my <strong>2nd year, 3rd semester</strong>. My journey in web development has been driven by a love for clean, efficient, and interactive user experiences.</p>
+
+                <p>With expertise in <strong>HTML, CSS, JavaScript</strong>, and modern frameworks, I specialize in building <strong>user-friendly, visually appealing</strong> web applications. My skills extend to both <strong>frontend and backend development</strong>, ensuring seamless functionality and an engaging UI/UX.</p>
+
+                <p>As a freelancer, I have worked on diverse projects, from <strong>personal blogs</strong> to <strong>business websites</strong>, focusing on delivering high-quality solutions tailored to clients' needs. I am always <strong>learning and adapting</strong> to new technologies to stay ahead in the ever-evolving field of web development.</p>
+
+                <p>Let's connect and build something amazing together! 🚀</p>
+
+                <a href="{{ url_for('resume') }}" class="btn">View My Resume</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-alt">Let's Talk</a>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Simran Bhandari">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

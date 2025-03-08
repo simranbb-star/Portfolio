@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Simran Bhandari | Portfolio{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+
+    <!-- Wrapper to allow sticky footer -->
+    <div class="main-wrapper">
+        <!-- Navigation Bar -->
+        <header>
+            <div class="logo">Simran Bhandari</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+                <!-- Hamburger Menu -->
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <main>
+            {% block content %}
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Hello, I am <span class="typed-text"></span></h1>
+                    <p>Welcome to my portfolio. Showcasing my skills, experience, and projects.</p>
+                    <div class="buttons">
+                        <a href="{{ url_for('resume') }}" class="btn">View Resume</a>
+                        <a href="{{ url_for('contact') }}" class="btn btn-alt">Get in Touch</a>
+                    </div>
+                </div>
+            </section>
+            {% endblock %}
+        </main>
+    </div> <!-- Close the main-wrapper -->
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Simran Bhandari. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

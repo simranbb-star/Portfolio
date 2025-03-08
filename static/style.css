@@ -1,0 +1,918 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Fixed Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+/* Logo */
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: 0.3s ease-in-out;
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+.nav-links a:hover {
+    background: #007bff;
+    border-radius: 5px;
+}
+
+/* Fix for text hidden behind navbar */
+main {
+    padding-top: 80px; /* Push content down to prevent hiding behind fixed header */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px;
+    transition: 0.4s;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background: #333;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px;
+        width: 100%;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: url('/static/hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Hero Content */
+.hero-content {
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 12px 25px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-alt {
+    background: #f4f4f4;
+    color: #333;
+}
+
+.btn-alt:hover {
+    background: #ddd;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Section */
+.about {
+    background: #f4f4f4;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.about-text .intro {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.about-text p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.about-text .highlight {
+    color: #007bff;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text, .about-image {
+        width: 100%;
+        padding: 0;
+    }
+
+    .about-text h2 {
+        font-size: 30px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .about-image img {
+        max-width: 250px;
+    }
+}
+
+/* Form Styling */
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* General Resume Styles */
+.resume {
+    margin: 40px;
+    font-family: 'Arial', sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.section-description {
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Skills Section */
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.skill-name {
+    font-weight: bold;
+    color: #333;
+    flex: 1;
+}
+
+.skill-level {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.level-text {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 200px;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4caf50; /* Green for good skills */
+    border-radius: 5px;
+}
+
+/* Experience Section */
+.experience-list {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-item {
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.experience-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.experience-duration {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Form Styling */
+form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form input, form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+form select {
+    font-size: 16px;
+}
+
+/* Edit Forms Styling */
+.edit-section {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.edit-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.edit-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-section input,
+.edit-section select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.edit-section button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Edit Button Style */
+.edit-btn {
+    display: inline-block;
+    background-color: #28a745; /* Green color */
+    color: white;
+    padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.edit-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.edit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.8); /* Blue focus ring */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Resume Section Layout */
+.resume {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.resume .section-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.resume .section-description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.resume-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left-column {
+    flex: 2; /* Makes left column take up more space */
+    margin-right: 20px;
+}
+
+.right-column {
+    flex: 1; /* Makes right column take up less space */
+    max-width: 400px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.skills-list, .experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-item, .experience-item {
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    font-weight: bold;
+}
+
+.skill-level {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.level-text {
+    margin-right: 10px;
+}
+
+.skill-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 10px;
+    background-color: #4caf50; /* Change this color based on skill level */
+    border-radius: 5px;
+}
+
+.edit-btn {
+    margin-left: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.edit-btn:hover {
+    text-decoration: underline;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+form input, form select {
+    margin-bottom: 10px;
+}
+
+/* Edit Button Styles */
+.edit-btn {
+    margin-left: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    align-self: flex-end;  /* Aligns to the right side of each skill/experience item */
+}
+
+.edit-btn:hover {
+    text-decoration: underline;
+}
+
+/* For skills and experience lists, align edit buttons */
+.skills-list .skill-item, .experience-list .experience-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns the edit button with other content */
+}
+
+.skills-list .skill-item .edit-btn, .experience-list .experience-item .edit-btn {
+    margin-left: 20px;
+}
+
+/* Skill Bar */
+.skill-bar {
+    width: 100%; /* Make the skill bar container span the full width */
+    height: 8px; /* Adjust the height for better visual appeal */
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.skill-bar .progress {
+    height: 100%;
+    background-color: #007bff; /* Skill progress color */
+    border-radius: 5px;
+}
+
+/* Skill Item Styles */
+.skill-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-item .skill-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.skill-item .skill-level {
+    width: 60%; /* Limit the width of the skill level section */
+}
+
+.skill-item .skill-level .level-text {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Contact Details */
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.contact-info h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: #555;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Left Side - Personal Info */
+.contact-info {
+    width: 40%;
+    text-align: left;
+}
+
+.contact-info h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.info-content {
+    color: #555;
+}
+
+.info-content a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.info-content a:hover {
+    color: #0056b3;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Right Side - Contact Form */
+.contact-form {
+    width: 55%;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.contact-form h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Ensure the body and HTML take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Main wrapper (allows content to grow and footer to stick at the bottom) */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* Ensure the content section takes up the remaining space */
+main {
+    flex-grow: 1;
+}
+
+/* Footer Styles */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Pushes footer to the bottom */
+}
+
